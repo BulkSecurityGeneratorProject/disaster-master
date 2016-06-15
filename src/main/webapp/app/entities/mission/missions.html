@@ -1,0 +1,68 @@
+<div>
+    <h2 translate="jhipsterApp.mission.home.title">Missions</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="mission.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="jhipsterApp.mission.home.createLabel">
+                        Create new Mission
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="jhipsterApp.mission.isAccepted">Is Accepted</span></th>
+                    <th><span translate="jhipsterApp.mission.name">Name</span></th>
+                    <th><span translate="jhipsterApp.mission.notes">Notes</span></th>
+                    <th><span translate="jhipsterApp.mission.dateStarted">Date Started</span></th>
+                    <th><span translate="jhipsterApp.mission.dateCompleted">Date Completed</span></th>
+                    <th><span translate="jhipsterApp.mission.currentStatus">Current Status</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="mission in vm.missions track by mission.id">
+                    <td><a ui-sref="mission-detail({id:mission.id})">{{mission.id}}</a></td>
+                    <td>{{mission.isAccepted}}</td>
+                    <td>{{mission.name}}</td>
+                    <td>{{mission.notes}}</td>
+                    <td>{{mission.dateStarted | date:'medium'}}</td>
+                    <td>{{mission.dateCompleted | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="mission-status-detail({id:mission.currentStatus.id})">{{mission.currentStatus.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="mission-detail({id:mission.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="mission.edit({id:mission.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="mission.delete({id:mission.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

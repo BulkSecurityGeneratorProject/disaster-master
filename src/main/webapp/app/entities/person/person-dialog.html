@@ -1,0 +1,90 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPersonLabel" translate="jhipsterApp.person.home.createOrEditLabel">Create or edit a Person</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.person.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.person.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jhipsterApp.person.address" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                    ng-model="vm.person.address"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jhipsterApp.person.bsn" for="field_bsn">Bsn</label>
+            <input type="text" class="form-control" name="bsn" id="field_bsn"
+                    ng-model="vm.person.bsn"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jhipsterApp.person.firstName" for="field_firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                    ng-model="vm.person.firstName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jhipsterApp.person.lastName" for="field_lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                    ng-model="vm.person.lastName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jhipsterApp.person.dateBorn" for="field_dateBorn">Date Born</label>
+                <div class="input-group">
+                    <input id="field_dateBorn" type="text" class="form-control" name="dateBorn" uib-datepicker-popup="{{dateformat}}" ng-model="vm.person.dateBorn" is-open="vm.datePickerOpenStatus.dateBorn"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateBorn')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jhipsterApp.person.dateCreated" for="field_dateCreated">Date Created</label>
+                <div class="input-group">
+                    <input id="field_dateCreated" type="text" class="form-control" name="dateCreated" datetime-picker="{{dateformat}}" ng-model="vm.person.dateCreated" is-open="vm.datePickerOpenStatus.dateCreated"
+                    required  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateCreated')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.dateCreated.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dateCreated.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.dateCreated.$error.ZonedDateTimelocal" translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jhipsterApp.person.dateLastEdited" for="field_dateLastEdited">Date Last Edited</label>
+                <div class="input-group">
+                    <input id="field_dateLastEdited" type="text" class="form-control" name="dateLastEdited" datetime-picker="{{dateformat}}" ng-model="vm.person.dateLastEdited" is-open="vm.datePickerOpenStatus.dateLastEdited"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateLastEdited')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

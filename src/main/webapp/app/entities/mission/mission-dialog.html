@@ -1,0 +1,70 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myMissionLabel" translate="jhipsterApp.mission.home.createOrEditLabel">Create or edit a Mission</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.mission.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.mission.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jhipsterApp.mission.isAccepted" for="field_isAccepted">Is Accepted</label>
+            <input type="checkbox" class="form-control" name="isAccepted" id="field_isAccepted"
+                    ng-model="vm.mission.isAccepted"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jhipsterApp.mission.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.mission.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jhipsterApp.mission.notes" for="field_notes">Notes</label>
+            <input type="text" class="form-control" name="notes" id="field_notes"
+                    ng-model="vm.mission.notes"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jhipsterApp.mission.dateStarted" for="field_dateStarted">Date Started</label>
+                <div class="input-group">
+                    <input id="field_dateStarted" type="text" class="form-control" name="dateStarted" datetime-picker="{{dateformat}}" ng-model="vm.mission.dateStarted" is-open="vm.datePickerOpenStatus.dateStarted"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateStarted')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="jhipsterApp.mission.dateCompleted" for="field_dateCompleted">Date Completed</label>
+                <div class="input-group">
+                    <input id="field_dateCompleted" type="text" class="form-control" name="dateCompleted" datetime-picker="{{dateformat}}" ng-model="vm.mission.dateCompleted" is-open="vm.datePickerOpenStatus.dateCompleted"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateCompleted')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="jhipsterApp.mission.currentStatus" for="field_currentStatus">Current Status</label>
+            <select class="form-control" id="field_currentStatus" name="currentStatus" ng-model="vm.mission.currentStatus" ng-options="missionStatus as missionStatus.id for missionStatus in vm.missionstatuses track by missionStatus.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

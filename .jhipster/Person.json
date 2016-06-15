@@ -1,0 +1,41 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bsn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateBorn",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateCreated",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateLastEdited",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20160615083738",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "person",
+    "pagination": "no"
+}

@@ -1,0 +1,22 @@
+
+<div>
+    <h2><span translate="jhipsterApp.fleet.detail.title">Fleet</span> {{vm.fleet.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="jhipsterApp.fleet.name">Name</span></dt>
+        <dd>
+            <span>{{vm.fleet.name}}</span>
+        </dd>
+        <dt><span translate="jhipsterApp.fleet.service">Service</span></dt>
+        <dd>
+            <a ui-sref="service-detail({id:vm.fleet.service.id})">{{vm.fleet.service.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="jhipsterApp.mission.detail.title">Mission</span> {{vm.mission.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="jhipsterApp.mission.isAccepted">Is Accepted</span></dt>
+        <dd>
+            <span>{{vm.mission.isAccepted}}</span>
+        </dd>
+        <dt><span translate="jhipsterApp.mission.name">Name</span></dt>
+        <dd>
+            <span>{{vm.mission.name}}</span>
+        </dd>
+        <dt><span translate="jhipsterApp.mission.notes">Notes</span></dt>
+        <dd>
+            <span>{{vm.mission.notes}}</span>
+        </dd>
+        <dt><span translate="jhipsterApp.mission.dateStarted">Date Started</span></dt>
+        <dd>
+            <span>{{vm.mission.dateStarted | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="jhipsterApp.mission.dateCompleted">Date Completed</span></dt>
+        <dd>
+            <span>{{vm.mission.dateCompleted | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="jhipsterApp.mission.currentStatus">Current Status</span></dt>
+        <dd>
+            <a ui-sref="mission-status-detail({id:vm.mission.currentStatus.id})">{{vm.mission.currentStatus.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

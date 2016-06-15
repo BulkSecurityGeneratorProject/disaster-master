@@ -1,0 +1,27 @@
+{
+    "jhipsterApp": {
+        "mission" : {
+            "home": {
+                "title": "Missions",
+                "createLabel": "Create a new Mission",
+                "createOrEditLabel": "Create or edit a Mission",
+                "search": "Search for Mission"
+            },
+            "created": "A new Mission is created with identifier {{ param }}",
+            "updated": "A Mission is updated with identifier {{ param }}",
+            "deleted": "A Mission is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mission {{ id }}?"
+            },
+            "detail": {
+                "title": "Mission"
+            },
+            "isAccepted": "Is Accepted",
+            "name": "Name",
+            "notes": "Notes",
+            "dateStarted": "Date Started",
+            "dateCompleted": "Date Completed",
+            "currentStatus": "Current Status"
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "unit",
+            "otherEntityName": "unit",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "brand",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "licensePlate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vehicleType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateCreated",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dateLastAccessed",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20160615084300",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "vehicle",
+    "pagination": "no"
+}

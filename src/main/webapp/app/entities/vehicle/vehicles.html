@@ -1,0 +1,68 @@
+<div>
+    <h2 translate="jhipsterApp.vehicle.home.title">Vehicles</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="vehicle.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="jhipsterApp.vehicle.home.createLabel">
+                        Create new Vehicle
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="jhipsterApp.vehicle.brand">Brand</span></th>
+                    <th><span translate="jhipsterApp.vehicle.licensePlate">License Plate</span></th>
+                    <th><span translate="jhipsterApp.vehicle.vehicleType">Vehicle Type</span></th>
+                    <th><span translate="jhipsterApp.vehicle.dateCreated">Date Created</span></th>
+                    <th><span translate="jhipsterApp.vehicle.dateLastAccessed">Date Last Accessed</span></th>
+                    <th><span translate="jhipsterApp.vehicle.unit">Unit</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="vehicle in vm.vehicles track by vehicle.id">
+                    <td><a ui-sref="vehicle-detail({id:vehicle.id})">{{vehicle.id}}</a></td>
+                    <td>{{vehicle.brand}}</td>
+                    <td>{{vehicle.licensePlate}}</td>
+                    <td>{{vehicle.vehicleType}}</td>
+                        <td>{{vehicle.dateCreated | date:'mediumDate'}}</td>
+                    <td>{{vehicle.dateLastAccessed | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="unit-detail({id:vehicle.unit.id})">{{vehicle.unit.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="vehicle-detail({id:vehicle.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="vehicle.edit({id:vehicle.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="vehicle.delete({id:vehicle.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

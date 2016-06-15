@@ -1,0 +1,29 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "assignedUnit",
+            "otherEntityName": "unit",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isAccepted",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20160615083223",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "task",
+    "pagination": "no"
+}

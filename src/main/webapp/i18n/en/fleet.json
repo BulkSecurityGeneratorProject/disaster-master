@@ -1,0 +1,24 @@
+{
+    "jhipsterApp": {
+        "fleet" : {
+            "home": {
+                "title": "Fleets",
+                "createLabel": "Create a new Fleet",
+                "createOrEditLabel": "Create or edit a Fleet",
+                "search": "Search for Fleet"
+            },
+            "created": "A new Fleet is created with identifier {{ param }}",
+            "updated": "A Fleet is updated with identifier {{ param }}",
+            "deleted": "A Fleet is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Fleet {{ id }}?"
+            },
+            "detail": {
+                "title": "Fleet"
+            },
+            "name": "Name",
+            "units": "Units",
+            "service": "Service"
+        }
+    }
+}

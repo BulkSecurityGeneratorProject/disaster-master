@@ -1,0 +1,21 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "missions",
+            "otherEntityName": "mission",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "currentStatus"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160615082848",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "mission_status",
+    "pagination": "no"
+}

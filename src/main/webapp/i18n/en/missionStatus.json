@@ -1,0 +1,23 @@
+{
+    "jhipsterApp": {
+        "missionStatus" : {
+            "home": {
+                "title": "Mission Statuses",
+                "createLabel": "Create a new Mission Status",
+                "createOrEditLabel": "Create or edit a Mission Status",
+                "search": "Search for Mission Status"
+            },
+            "created": "A new Mission Status is created with identifier {{ param }}",
+            "updated": "A Mission Status is updated with identifier {{ param }}",
+            "deleted": "A Mission Status is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Mission Status {{ id }}?"
+            },
+            "detail": {
+                "title": "Mission Status"
+            },
+            "name": "Name",
+            "missions": "Missions"
+        }
+    }
+}

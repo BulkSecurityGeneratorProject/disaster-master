@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="jhipsterApp.vehicle.detail.title">Vehicle</span> {{vm.vehicle.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="jhipsterApp.vehicle.brand">Brand</span></dt>
+        <dd>
+            <span>{{vm.vehicle.brand}}</span>
+        </dd>
+        <dt><span translate="jhipsterApp.vehicle.licensePlate">License Plate</span></dt>
+        <dd>
+            <span>{{vm.vehicle.licensePlate}}</span>
+        </dd>
+        <dt><span translate="jhipsterApp.vehicle.vehicleType">Vehicle Type</span></dt>
+        <dd>
+            <span>{{vm.vehicle.vehicleType}}</span>
+        </dd>
+        <dt><span translate="jhipsterApp.vehicle.dateCreated">Date Created</span></dt>
+        <dd>
+            <span>{{vm.vehicle.dateCreated | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="jhipsterApp.vehicle.dateLastAccessed">Date Last Accessed</span></dt>
+        <dd>
+            <span>{{vm.vehicle.dateLastAccessed | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="jhipsterApp.vehicle.unit">Unit</span></dt>
+        <dd>
+            <a ui-sref="unit-detail({id:vm.vehicle.unit.id})">{{vm.vehicle.unit.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

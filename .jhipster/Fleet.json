@@ -1,0 +1,27 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "units",
+            "otherEntityName": "unit",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "assignedFleet"
+        },
+        {
+            "relationshipName": "service",
+            "otherEntityName": "service",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160615083418",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "fleet",
+    "pagination": "no"
+}
